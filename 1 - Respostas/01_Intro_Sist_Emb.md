@@ -26,9 +26,9 @@ Braço Mecânico.
 
 #4. Cite arquiteturas possíveis e as diferenças entre elas.
 Arquiteturas para memória
->Harvard Architecture (PICs, Intel 8051, ARM9): possui circuitos separadamente para sinais e armazenamento de dados e instruções independentes em termos de barramento, acesso a memória de dados separados em relação a memoria do programa.
+Harvard Architecture (PICs, Intel 8051, ARM9): possui circuitos separadamente para sinais e armazenamento de dados e instruções independentes em termos de barramento, acesso a memória de dados separados em relação a memoria do programa.
 
->Von Neumann Architecture: possui separação no barramento de dados da memoria de instrução de dados o que permite que um processador possa acessa-las simultaneamente obtendo melhor desempenho.
+Von Neumann Architecture: possui separação no barramento de dados da memoria de instrução de dados o que permite que um processador possa acessa-las simultaneamente obtendo melhor desempenho.
 
 #5. Por que usamos o Raspberry Pi na disciplina, ao invés de outro system-on-chip?
 O Raspberry Pi foi desenvolvida com o compromisso de oferecer simplicidade e baixo custo ao consumidor,apresentando também tanto um foco educacional quanto profissional, por ser muito utilizada na indústria e em casas inteligentes.
