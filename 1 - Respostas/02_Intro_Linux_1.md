@@ -21,61 +21,80 @@
 
 - (a) Obter mais informações sobre um comando. 
 
-      man
+man
 
 - (b) Apresentar uma lista com os arquivos dentro de uma pasta. 
-      ls
+      
+ls
 
 - (c) Apresentar o caminho completo da pasta. 
-      pwd
+
+pwd
 
 - (d) Trocar de pasta. 
-      cd		
+
+cd		
 
 - (e) Criar uma pasta. 
-      mkdir
+
+mkdir
 
 - (f) Apagar arquivos definitivamente. 
-      rm
+
+rm
 
 - (g) Apagar pastas definitivamente. 
-      rm -r
+
+rm -r
 
 - (h) Copiar arquivos. 
-      cp
+
+cp
 
 - (i) Copiar pastas. 
-      cp -r
+
+cp -r
 
 - (j) Mover arquivos. 
-      mv
+
+mv
 
 - (k) Mover pastas. 
-      mv -r
+
+mv -r
 
 - (l) Renomear pastas. 
-      mv nome_antigo nome_novo
+
+mv nome_antigo nome_novo
 
 - (m) Apresentar o conteúdo de um arquivo. 
-      cat
+
+cat
 
 - (n) Apresentar o tipo de um arquivo. 
-      file
+
+file
 
 - (o) Limpar a tela do terminal. 
-      clear
+
+clear
 
 - (p) Encontrar ocorrências de palavras-chave em um arquivo-texto. 
-      grep
+
+grep
 
 - (q) Ordenar informações em um arquivo-texto. 
-      sort
+
+sort
 
 - (r) Substituir ocorrências de palavras-chave em um arquivo-texto. 
-      sed
+
+sed
 
 - (s) Conferir se dois arquivos são iguais.
-      diff
+
+diff
 
 - (t) Escrever algo na tela.
-      echo
+
+echo
