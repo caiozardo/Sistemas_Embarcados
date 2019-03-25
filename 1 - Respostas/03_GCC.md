@@ -220,6 +220,50 @@ $ Argumentos: Eu Mesmo e Minha Pessoa
 8. Crie uma função que retorna a quantidade de caracteres em uma string, usando o seguinte protótipo:
 `int Num_Caracs(char *string);` Salve-a em um arquivo separado chamado 'num_caracs.c'. Salve o protótipo em um arquivo chamado 'num_caracs.h'. Compile 'num_caracs.c' para gerar o objeto 'num_caracs.o'.
 
+```questao8.c(main):
+
+    #include <stdio.h>
+    #include "num_caracs.h"
+    
+    char nome[] = "Testando String";
+    
+    int main(int argc, const char *argv[])
+    {
+            printf("O tamanho da string e: %d", Num_Caracs(nome));
+            return 0;
+    }
+Num_Caracs.c
+#include <stdio.h>
+#include <stdlib.h>
+#include "num_caracs.h"
+
+int Num_Caracs(char *nome){
+    
+    int contador = 1;
+    int i = 0;
+    int tamanho_da_string;
+    
+    while(contador){
+            if(nome[i] == '\0'){
+                   contador = !contador;
+                   tamanho_da_string = i;
+            }
+         i++;
+    }
+    return tamanho_da_string;
+}
+num_caracs.h
+// Arquivo num_caracs.h
+
+    int Num_Caracs(char *nome);)
+terminal:
+
+gcc -c questao8.c
+gcc -c Num_Caracs.c
+gcc -o questao8 questao8.o Num_Caracs.o
+./questao8
+O tamanho da string e: 15 ```
+
 
 
 9. Re-utilize o objeto criado na questão 8 para criar um código que imprime cada argumento de entrada e a quantidade de caracteres de cada um desses argumentos. Por exemplo, considerando que o código criado recebeu o nome de 'ola_num_caracs_1':
