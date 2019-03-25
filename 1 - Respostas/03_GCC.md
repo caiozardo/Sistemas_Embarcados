@@ -303,6 +303,64 @@ $ ./ola_num_caracs_2 Eu Mesmo
 $ Total de caracteres de entrada: 25
 ```
 
+questao11.c (main):
+
+   ``` #include <stdio.h>
+    #include <stdlib.h>
+    #include "num_caracs.h"
+    
+    
+    int main(int argc, char *argv[])
+    {
+        int i = 0;
+        int  total = 0;
+            while (i < argc){
+                   total += Num_Caracs(argv[i]);
+                   i++;
+            }
+        printf("Total de caracteres de entrada: %d", total);
+        return 0;
+    }```
+    
+``` Num_Caracs.c:
+
+    ``` #include <stdio.h>
+    #include <stdlib.h>
+    #include "num_caracs.h"
+
+    int Num_Caracs(char *nome){
+    
+    int contador = 1;
+    int i = 0;
+    int tamanho_da_string;
+    
+    while(contador){
+            if(nome[i] == '\0'){
+                   contador = !contador;
+                   tamanho_da_string = i;
+            }
+         i++;
+    }
+    return tamanho_da_string;
+    }```
+    
+```num_caracs.h:
+
+// Arquivo num_caracs.h```
+
+``` C int Num_Caracs(char *nome);)
+
+``` terminal:
+
+gcc -c questao11.c
+gcc -c Num_Caracs.c
+gcc -o questao11 questao11.o Num_Caracs.o
+
+resultado:
+
+./questao11 Testando
+Total de caracteres de entrada: 19 ``` 
+
 12. Crie um Makefile para a questão anterior.
 
 ``` #Makefile
