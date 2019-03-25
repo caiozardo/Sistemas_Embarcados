@@ -23,19 +23,19 @@ Não limite o script a 3 meses. Ele deve funcionar para vários casos, como por 
 ./cals.sh 1 2019 2 2020 3 2021 1 2010
 
 > #!/bin/bash
-
+>
 > args=$#
-
+>
 >for (( i=1; i<=$args; i+=2 ))
-
+>
 >do
-
+>
 >   MES=${!i}    
-	
+>	
 >   ANO=$(($i+1))
-	
+>	
 >   cal $MES ${!ANO}
-	
+>	
 > done
 
 3- Utilizando a lógica do script anterior, descubra em que dia da semana caiu o seu aniversário nos últimos dez anos.
@@ -54,13 +54,22 @@ Não limite o script a 3 meses. Ele deve funcionar para vários casos, como por 
 >done
 
 4- Crie um arquivo sites.txt com o seguinte conteúdo:
+
 https://github.com/DiogoCaetanoGarcia/Sistemas_Embarcados/raw/master/Aulas/01_Linux%20b%C3%A1sico.pdf https://github.com/DiogoCaetanoGarcia/Sistemas_Embarcados/raw/master/Aulas/01_Linux%20b%C3%A1sico_Shell_Script.pdf https://github.com/DiogoCaetanoGarcia/Sistemas_Embarcados/raw/master/Aulas/01_Sistemas%20Embarcados%20-%20Aula%201%20-%20Introdu%C3%A7%C3%A3o.pdf
+
 Estes são links para slides de 3 aulas desta dsciplina, um para cada linha do arquivo sites.txt. Faça um script que faz o download destes slides automaticamente, a partir do arquivo sites.txt. (DICA: use o comando wget.)
-#!/bin/bash
-echo "https://github.com/DiogoCaetanoGarcia/Sistemas_Embarcados/raw/master/Aulas/01_Linux%20b%C3%A1sico.pdf" > sites.txt
-echo "https://github.com/DiogoCaetanoGarcia/Sistemas_Embarcados/raw/master/Aulas/01_Linux%20b%C3%A1sico_Shell_Script.pdf" >> sites.txt
-echo "https://github.com/DiogoCaetanoGarcia/Sistemas_Embarcados/raw/master/Aulas/01_Sistemas%20Embarcados%20-%20Aula%201%20-%20Introdu%C3%A7%C3%A3o.pdf" >> sites.txt
-wget -i sites.txt
+
+> #!/bin/bash
+>
+> echo "https://github.com/DiogoCaetanoGarcia/Sistemas_Embarcados/raw/master/Aulas/01_Linux%20b%C3%A1sico.pdf" > sites.txt
+>
+> echo "https://github.com/DiogoCaetanoGarcia/Sistemas_Embarcados/raw/master/Aulas/01_Linux%20b%C3%A1sico_Shell_Script.pdf" >> sites.txt
+>
+>
+> echo "https://github.com/DiogoCaetanoGarcia/Sistemas_Embarcados/raw/master/Aulas/01_Sistemas%20Embarcados%20-%20Aula%201%20-%20Introdu%C3%A7%C3%A3o.pdf" >> sites.txt
+>
+>wget -i sites.txt
+
 5- Faça um script chamado up.sh que sobe N níveis na pasta onde você estiver, usando $1 como parâmetro de entrada. Por exemplo, se você estiver em /home/aluno/Documents e executar ./up.sh 2, você automaticamente vai para a pasta /home.
 #!/bin/bash
 for (( i=1; i<=$1; i++ ))
