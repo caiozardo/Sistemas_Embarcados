@@ -71,9 +71,15 @@ Estes são links para slides de 3 aulas desta dsciplina, um para cada linha do a
 >wget -i sites.txt
 
 5- Faça um script chamado up.sh que sobe N níveis na pasta onde você estiver, usando $1 como parâmetro de entrada. Por exemplo, se você estiver em /home/aluno/Documents e executar ./up.sh 2, você automaticamente vai para a pasta /home.
-#!/bin/bash
-for (( i=1; i<=$1; i++ ))
-do
-	cd ..	
-done
-exec bash
+
+> #!/bin/bash
+>
+> for (( i=1; i<=$1; i++ ))
+>
+> do
+>
+>      cd ..	
+>
+> done
+>
+> exec bash
