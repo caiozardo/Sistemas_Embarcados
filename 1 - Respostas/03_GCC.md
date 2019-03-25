@@ -2,7 +2,8 @@ Para todas as questões, compile-as com o gcc e execute-as via terminal.
 
 1. Crie um "Olá mundo!" em C.
 
-	```#include <stdio.h>
+	```
+	#include <stdio.h>
 	#include <stdlib.h>
 
 	int main(void)
@@ -42,7 +43,7 @@ $ ./ola_usuario_1
 $ Digite o seu nome: Eu Mesmo
 ```
 
-	arthur@pctutu:~/Área de Trabalho$ ./exerc3
+	caio@pccaiozardo:~/Área de Trabalho$ ./exerc3
 	Digite seu nome: Eu Mesmo
 	Ola Eu
 
@@ -53,7 +54,7 @@ $ ./ola_usuario_1
 $ Digite o seu nome: "Eu Mesmo"
 ```
 
-	arthur@pctutu:~/Área de Trabalho$ ./exerc3
+	caio@pccaiozardo:~/Área de Trabalho$ ./exerc3
 	Digite seu nome: "Eu Mesmo"
 	Ola "Eu 
 
@@ -63,7 +64,7 @@ $ Digite o seu nome: "Eu Mesmo"
 $ echo Eu | ./ola_usuario_1
 ```
 
-	arthur@pctutu:~/Área de Trabalho$ echo Eu | ./exerc3 
+	caio@pccaiozardo:~/Área de Trabalho$ echo Eu | ./exerc3 
 	Digite seu nome: Ola Eu 
 
 
@@ -72,7 +73,7 @@ $ echo Eu | ./ola_usuario_1
 $ echo Eu Mesmo | ./ola_usuario_1
 ```
 
-	arthur@pctutu:~/Área de Trabalho$ echo Eu Mesmo | ./exerc3 
+	caio@pccaiozardo:~/Área de Trabalho$ echo Eu Mesmo | ./exerc3 
 	Digite seu nome: Ola Eu
 
 
@@ -81,7 +82,7 @@ $ echo Eu Mesmo | ./ola_usuario_1
 $ echo "Eu Mesmo" | ./ola_usuario_1
 ```
 
-	arthur@pctutu:~/Área de Trabalho$ echo "Eu Mesmo" | ./exerc3 
+	caio@pccaiozardo:~/Área de Trabalho$ echo "Eu Mesmo" | ./exerc3 
 	Digite seu nome: Ola Eu
 
 
@@ -90,8 +91,8 @@ c(f) Se é usado o redirecionamento de arquivo. Por exemplo:
 $ echo Ola mundo cruel! > ola.txt
 $ ./ola_usuario_1 < ola.txt
 ```
-	arthur@pctutu:~/Área de Trabalho$ echo Ola mundo cruel! > ola.txt
-	arthur@pctutu:~/Área de Trabalho$ ./exerc3 < ola.txt
+	caio@pccaiozardo:~/Área de Trabalho$ echo Ola mundo cruel! > ola.txt
+	caio@pccaiozardo:~/Área de Trabalho$ ./exerc3 < ola.txt
 	Digite seu nome: Ola Ola
 
 
@@ -121,7 +122,7 @@ $ Ola Eu
 $ ./ola_usuario_2 Eu Mesmo
 ```
 
-	arthur@pctutu:~/Área de Trabalho$ ./exerc5 Eu Mesmo
+	caio@pccaiozardo:~/Área de Trabalho$ ./exerc5 Eu Mesmo
 	Ola Eu
 
 
@@ -130,7 +131,7 @@ $ ./ola_usuario_2 Eu Mesmo
 $ ./ola_usuario_2 "Eu Mesmo"
 ```
 
-	arthur@pctutu:~/Área de Trabalho$ ./exerc5 "Eu Mesmo"
+	caio@pccaiozardo:~/Área de Trabalho$ ./exerc5 "Eu Mesmo"
 	Ola Eu Mesmo
 
 
@@ -139,7 +140,7 @@ $ ./ola_usuario_2 "Eu Mesmo"
 $ echo Eu | ./ola_usuario_2
 ```
 
-	arthur@pctutu:~/Área de Trabalho$ echo Eu | ./exerc5
+	caio@pccaiozardo:~/Área de Trabalho$ echo Eu | ./exerc5
 	Ola (null)
 
 
@@ -148,7 +149,7 @@ $ echo Eu | ./ola_usuario_2
 $ echo Eu Mesmo | ./ola_usuario_2
 ```
 
-	arthur@pctutu:~/Área de Trabalho$ echo Eu Mesmo | ./exerc5
+	caio@pccaiozardo:~/Área de Trabalho$ echo Eu Mesmo | ./exerc5
 	Ola (null)
 
 
@@ -157,7 +158,7 @@ $ echo Eu Mesmo | ./ola_usuario_2
 $ echo "Eu Mesmo" | ./ola_usuario_2
 ```
 
-	arthur@pctutu:~/Área de Trabalho$ echo "Eu Mesmo" | ./exerc5
+	caio@pccaiozardo:~/Área de Trabalho$ echo "Eu Mesmo" | ./exerc5
 	Ola (null)
 
 
@@ -167,8 +168,8 @@ $ echo Ola mundo cruel! > ola.txt
 $ ./ola_usuario_2 < ola.txt
 ```
 
-	arthur@pctutu:~/Área de Trabalho$ echo Ola mundo cruel! > ola.txt
-	arthur@pctutu:~/Área de Trabalho$ ./exerc5 < ola.txt
+	caio@pccaiozardo:~/Área de Trabalho$ echo Ola mundo cruel! > ola.txt
+	caio@pccaiozardo:~/Área de Trabalho$ ./exerc5 < ola.txt
 	Ola (null)
 
 
@@ -230,11 +231,9 @@ $ Argumento: Eu / Numero de caracteres: 2
 $ Argumento: Mesmo / Numero de caracteres: 5
 ```
 
-
-
 10. Crie um Makefile para a questão anterior.
 
-
+???
 
 11. Re-utilize o objeto criado na questão 8 para criar um código que imprime o total de caracteres nos argumentos de entrada. Por exemplo, considerando que o código criado recebeu o nome de 'ola_num_caracs_2':
 
@@ -243,9 +242,7 @@ $ ./ola_num_caracs_2 Eu Mesmo
 $ Total de caracteres de entrada: 25
 ```
 
-
-
 12. Crie um Makefile para a questão anterior.
 
-
+???
 .
