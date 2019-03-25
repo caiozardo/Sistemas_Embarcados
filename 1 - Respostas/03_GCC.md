@@ -86,7 +86,7 @@ $ echo "Eu Mesmo" | ./ola_usuario_1
 	Digite seu nome: Ola Eu
 
 
-c(f) Se é usado o redirecionamento de arquivo. Por exemplo:
+(f) Se é usado o redirecionamento de arquivo. Por exemplo:
 ```bash
 $ echo Ola mundo cruel! > ola.txt
 $ ./ola_usuario_1 < ola.txt
