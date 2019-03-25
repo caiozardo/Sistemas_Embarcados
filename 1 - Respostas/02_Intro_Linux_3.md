@@ -23,8 +23,7 @@ Não limite o script a 3 meses. Ele deve funcionar para vários casos, como por 
 ./cals.sh 1 2019 2 2020 3 2021 1 2010
 
 > #!/bin/bash
-
-args=$#
+> args=$#
 
 for (( i=1; i<=$args; i+=2 ))
 
