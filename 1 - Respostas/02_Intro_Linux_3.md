@@ -39,15 +39,20 @@ Não limite o script a 3 meses. Ele deve funcionar para vários casos, como por 
 > done
 
 3- Utilizando a lógica do script anterior, descubra em que dia da semana caiu o seu aniversário nos últimos dez anos.
-#!/bin/bash
-for (( i=2019; i>=2009; i-=1 ))
-do
-	DIA=$1	
-	MES=$2    
-	ANO=$i
-	echo ANO: $i	
-	ncal $2 $i | grep 26
-done
+
+> #!/bin/bash
+>
+> for (( i=2019; i>=2009; i-=1 ))
+>
+> do
+>
+>	DIA=$1	
+>	MES=$2    
+>	ANO=$i
+>	echo ANO: $i	
+>	ncal $2 $i | grep 26
+>done
+
 4- Crie um arquivo sites.txt com o seguinte conteúdo:
 https://github.com/DiogoCaetanoGarcia/Sistemas_Embarcados/raw/master/Aulas/01_Linux%20b%C3%A1sico.pdf https://github.com/DiogoCaetanoGarcia/Sistemas_Embarcados/raw/master/Aulas/01_Linux%20b%C3%A1sico_Shell_Script.pdf https://github.com/DiogoCaetanoGarcia/Sistemas_Embarcados/raw/master/Aulas/01_Sistemas%20Embarcados%20-%20Aula%201%20-%20Introdu%C3%A7%C3%A3o.pdf
 Estes são links para slides de 3 aulas desta dsciplina, um para cada linha do arquivo sites.txt. Faça um script que faz o download destes slides automaticamente, a partir do arquivo sites.txt. (DICA: use o comando wget.)
