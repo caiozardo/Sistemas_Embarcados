@@ -233,7 +233,24 @@ $ Argumento: Mesmo / Numero de caracteres: 5
 
 10. Crie um Makefile para a questão anterior.
 
-???
+    ``` #Makefile
+    
+    questao9.o: questao9.c num_caracs.h
+
+        gcc $(CFLAGS) -c questao9uestao9.c
+
+    Num_Caracs.o: Num_Caracs.c num_caracs.h
+
+        gcc $(CFLAGS) -c Num_Caracs_Caracs.c
+
+    questao9: questao9.o Num_Caracs.o
+
+        gcc $(CFLAGS) -o questao9   questao9.o Num_Caracs.o
+
+    clean:
+
+        rm -f *.o 
+	```
 
 11. Re-utilize o objeto criado na questão 8 para criar um código que imprime o total de caracteres nos argumentos de entrada. Por exemplo, considerando que o código criado recebeu o nome de 'ola_num_caracs_2':
 
@@ -244,5 +261,21 @@ $ Total de caracteres de entrada: 25
 
 12. Crie um Makefile para a questão anterior.
 
-???
-.
+``` #Makefile
+
+questao11.o: questao11.c num_caracs.h
+
+	gcc $(CFLAGS) -c questao11.c
+
+Num_Caracs.o: Num_Caracs.c num_caracs.h
+
+	gcc $(CFLAGS) -c Num_Caracs.c
+
+questao11: questao11.o Num_Caracs.o
+
+	gcc $(CFLAGS) -o questao11 questao11.o Num_Caracs.o
+
+clean:
+
+rm -f *.o 
+```
