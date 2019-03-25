@@ -23,21 +23,20 @@ Não limite o script a 3 meses. Ele deve funcionar para vários casos, como por 
 ./cals.sh 1 2019 2 2020 3 2021 1 2010
 
 > #!/bin/bash
+
 > args=$#
 
-for (( i=1; i<=$args; i+=2 ))
+>for (( i=1; i<=$args; i+=2 ))
 
-do
+>do
 
-   MES=${!i}    
+>   MES=${!i}    
 	
-   ANO=$(($i+1))
+>   ANO=$(($i+1))
 	
-   cal $MES ${!ANO}
+>   cal $MES ${!ANO}
 	
-done
-
-> 
+> done
 
 3- Utilizando a lógica do script anterior, descubra em que dia da semana caiu o seu aniversário nos últimos dez anos.
 #!/bin/bash
