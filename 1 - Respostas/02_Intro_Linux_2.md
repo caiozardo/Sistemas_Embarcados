@@ -1,16 +1,19 @@
 # 1. Escreva o texto "Ola mundo cruel!" em um arquivo denominado "Ola_mundo.txt". Apresente o conteúdo deste arquivo no terminal.
 
-echo Ola mundo cruel! > Ola_mundo.txt			
+echo Ola mundo cruel! > Ola_mundo.txt	
+
    cat Ola_mundo.txt
 
 # 2. Apresente o nome de todos os arquivos e pastas na pasta 'root'.
 
    após entrar como super usuário, digite o comando:
+   
    ls -la /root/
 
 # 3. Apresente o tipo de todos os arquivos e pastas na pasta 'root'.
 
    após entrar como super usuário, digite o comando:
+   
    file -l /root/
 
 # 4. Apresente somente as pastas dentro da pasta 'root'.
