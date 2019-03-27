@@ -2,6 +2,51 @@ Para todas as questões, utilize as funções da biblioteca `stdio.h` de leitura
 
 1. Crie um código em C para escrever "Ola mundo!" em um arquivo chamado 'ola_mundo.txt'.
 
+Resposta:
+```
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+int main(void)
+
+{
+
+	FILE * fp;
+
+	char frase[] = "Ola mundo!";
+
+
+
+	fp = fopen("ola_mundo.txt", "w");
+
+	
+
+	if(fp == NULL){
+
+		puts("Erro ao criar o arquivo\n");
+
+		exit(-1);
+
+	}
+
+
+
+	fputs(frase, fp);
+
+
+
+	fclose(fp);
+
+
+
+	return 0;
+
+}
+```
+
 2. Crie um código em C que pergunta ao usuário seu nome e sua idade, e escreve este conteúdo em um arquivo com o seu nome e extensão '.txt'. Por exemplo, considerando que o código criado recebeu o nome de 'ola_usuario_1':
 
 ```bash
@@ -11,6 +56,78 @@ $ Digite a sua idade: 30
 $ cat Eu.txt
 $ Nome: Eu
 $ Idade: 30 anos
+```
+
+Resposta: 
+
+```
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <string.h>
+
+
+
+int main(void)
+
+{
+
+	FILE *fp;
+
+	unsigned int idade;
+
+	char nomep[128], nomearq[128];
+
+	char ext[] = ".txt";
+
+
+
+	printf("Digite o seu nome: ");
+
+	scanf("%s", nomep);
+
+
+
+	printf("Digite a sua idade: ");
+
+	scanf("%d", &idade);
+
+
+
+	strcpy(nomearq, nomep);
+
+	strcat(nomearq, ext);
+
+
+
+	fp = fopen(nomearq, "w");
+
+
+
+	if (fp == NULL) {
+
+		printf("Erro ao abrir o arquivo '%s'\n", nomearq);
+
+		exit(-1);
+
+	}
+
+
+
+	fprintf(fp, "Nome: %s\n", nomep);
+
+	fprintf(fp, "Idade: %d\n", idade);
+
+
+
+	fclose(fp);
+
+
+
+	return 0;
+
+}
 ```
 
 3. Crie um código em C que recebe o nome do usuário e e sua idade como argumentos de entrada (usando as variáveis `argc` e `*argv[]`), e escreve este conteúdo em um arquivo com o seu nome e extensão '.txt'. Por exemplo, considerando que o código criado recebeu o nome de 'ola_usuario_2':
