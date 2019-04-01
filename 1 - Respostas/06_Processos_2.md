@@ -1,4 +1,7 @@
 1. Crie um código em C para gerar três processos-filho usando o `fork()`.
+
+Resposta:
+
 ```
 #include <unistd.h>
  
@@ -37,7 +40,9 @@ $ 12 13 14 15 16 17 18
 $ 19 20 21 22 23 24 25
 $ 26 27 28 29 30 31
 ```
+Resposta: 
 
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h> 
@@ -52,9 +57,13 @@ strcpy(command, argv[i]);
 system(command);
 }
 }
+```
 
 3. Crie um código em C que recebe o nome de diversos comandos pelos argumentos de entrada (`argc` e `*argv[]`), e executa cada um usando `fork()` e `exec()`.
 
+Resposta: 
+
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h> 
@@ -73,6 +82,7 @@ char *user_input[2]={NULL,NULL};
 	}	
 wait(NULL);
 }
+```
 
 4. Crie um código em C que gera três processos-filho usando o `fork()`, e que cada processo-filho chama a seguinte função uma vez:
 
@@ -88,6 +98,9 @@ void Incrementa_Variavel_Global(pid_t id_atual)
 
 (Repare que a função `Incrementa_Variavel_Global()` recebe como entrada o ID do processo que a chamou.) Responda: a variável global `v_global` foi compartilhada por todos os processos-filho, ou cada processo enxergou um valor diferente para esta variável?
 
+Resposta: 
+
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -119,9 +132,13 @@ printf("\nEsse é o processo Darth Vader.\n");
 wait(NULL);}}
 }
 Cada processo enxergou um valor diferente para a variável.
+```
 
 5. Repita a questão anterior, mas desta vez faça com que o processo-pai também chame a função `Incrementa_Variavel_Global()`. Responda: a variável global `v_global` foi compartilhada por todos os processos-filho e o processo-pai, ou cada processo enxergou um valor diferente para esta variável?
 
+Resposta: 
+
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -154,3 +171,4 @@ printf("\nEsse é o processo Darth Vader.\n");
 wait(NULL);}}
 }
 Cada variável foi compartilhada por todos os processo-filho e o processo-pai.
+```
