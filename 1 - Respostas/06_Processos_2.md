@@ -1,5 +1,5 @@
 1. Crie um código em C para gerar três processos-filho usando o `fork()`.
-
+```
 #include <unistd.h>
  
 int main(){
@@ -18,6 +18,7 @@ exit(0);
 }
 }
 }
+```
 
 2. Crie um código em C que recebe o nome de diversos comandos pelos argumentos de entrada (`argc` e `*argv[]`), e executa cada um sequencialmente usando `system()`. Por exemplo, considerando que o código criado recebeu o nome de 'serial_system', e que ele foi executado na pasta '/Sistemas_Embarcados/Code/06_Processos', que contem diversos arquivos:
 
