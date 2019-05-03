@@ -1,0 +1,38 @@
+/******************************************************************************
+Heart_Rate_Display.ino
+Programa de Demonstração para o Sensor de Frequência Cardíaca AD8232
+Casey Kuhns @ SparkFun Electronics
+6/27/2014
+https://github.com/sparkfun/AD8232_Heart_Rate_Monitor
+O sensor de frequência cardíaca AD8232 é um sensor de ECG de baixo custo. Este exemplo mostra
+como criar um ECG com exibição em tempo real. A exibição está usando o processamento.
+Este esboço é fortemente baseado no tutorial de gráficos fonecidos no arduino IDE.
+http://www.arduino.cc/en/Tutorial/Graph
+Recursos:
+Este programa requer um esboço de processamento para exibir os dados em tempo real.
+Especificidades do ambiente de desenvolvimento:
+	IDE: Arduino 1.0.5
+	Plataforma Hardware: Arduino Pro 3.3V/8MHz
+	AD8232 Monitor de Frequência Cardíaca Version: 1.0	
+******************************************************************************/
+
+void setup() {
+  // inicializando a comunicação serial:
+  Serial.begin(9600);
+  pinMode(10, INPUT); // Configuração para os LEDS de de detecção LO+
+  pinMode(11, INPUT); // Configuração para os LEDS de de detecção LO-
+
+}
+
+void loop() {
+  
+  if((digitalRead(10) == 1)||(digitalRead(11) == 1)){
+    Serial.println('!');
+  }
+  else{
+    // envia o valor da entrada analógica 0:
+      Serial.println(analogRead(A0));
+  }
+  // Aguarde um pouco para evitar que os dados seriais saturem
+  delay(1);
+}

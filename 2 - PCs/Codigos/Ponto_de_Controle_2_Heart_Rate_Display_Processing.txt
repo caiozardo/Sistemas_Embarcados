@@ -1,0 +1,127 @@
+/******************************************************************************
+Heart_Rate_Display.ino
+Programa de Demonstração para o Sensor de Frequência Cardíaca AD8232
+Casey Kuhns @ SparkFun Electronics
+6/27/2014
+https://github.com/sparkfun/AD8232_Heart_Rate_Monitor
+O sensor de frequência cardíaca AD8232 é um sensor de ECG de baixo custo. Este exemplo mostra
+como criar um ECG com exibição em tempo real. A exibição está usando o processamento.
+Este esboço é fortemente baseado no tutorial de gráficos fonecidos no arduino IDE.
+http://www.arduino.cc/en/Tutorial/Graph
+Recursos:
+Este programa requer um esboço de processamento para exibir os dados em tempo real.
+Especificidades do ambiente de desenvolvimento:
+	IDE: Arduino 1.0.5
+	Plataforma Hardware: Arduino Pro 3.3V/8MHz
+	AD8232 Monitor de Frequência Cardíaca Version: 1.0	
+******************************************************************************/
+
+import processing.serial.*;
+
+Serial myPort;        // Porta Serial
+int xPos = 1;         // Posição horizontal do gráfico
+float height_old = 0;
+float height_new = 0;
+float inByte = 0;
+int BPM = 0;
+int beat_old = 0;
+float[] beats = new float[500];  // Cálculo do BPM médio
+int beatIndex;
+float threshold = 620.0;  // Limite no qual o cálculo do BPM ocorre
+boolean belowThreshold = true;
+PFont font;
+
+
+void setup () {
+  // Definição do tamanho da janela:
+  size(1000, 400);        
+
+  // Lista de todas as portas seriais disponíveis
+  println(Serial.list());
+  // Abertura da porta que estaremos utilizando em forma de matriz
+  myPort = new Serial(this, Serial.list()[2], 9600);
+  // não gere um serialEvent() a menos que você tenha um caracter novo de linha:
+  myPort.bufferUntil('\n');
+  // Definir o fundo inicial:
+  background(0xff);
+  font = createFont("Ariel", 12, true);
+}
+
+
+void draw () {
+     // Mapear e desenhar a linha para o novo ponto de dados
+     inByte = map(inByte, 0, 1023, 0, height);
+     height_new = height - inByte; 
+     line(xPos - 1, height_old, xPos, height_new);
+     height_old = height_new;
+    
+      // na borda da tela, volte para o começo:
+      if (xPos >= width) {
+        xPos = 0;
+        background(0xff);
+      } 
+      else {
+        // incrementar a posição horizontal:
+        xPos++;
+      }
+      
+      // Desenhar o texto para o BPM periodicamente:
+      if (millis() % 128 == 0){
+        fill(0xFF);
+        rect(0, 0, 200, 20);
+        fill(0x00);
+        text("BPM: " + inByte, 15, 10);
+      }
+}
+
+
+void serialEvent (Serial myPort) 
+{
+  // Obtenha a string ASCII:
+  String inString = myPort.readStringUntil('\n');
+
+  if (inString != null) 
+  {
+    // Apare qualquer espaço em branco:
+    inString = trim(inString);
+
+    // Caso a detecção do led off for verdadeira, notifique com a linha azul
+    if (inString.equals("!")) 
+    { 
+      stroke(0, 0, 0xff); //Set stroke to blue ( R, G, B)
+      inByte = 512;  // middle of the ADC range (Flat Line)
+    }
+    // Caso os dados sejam bons, deixa entrar:
+    else 
+    {
+      stroke(0xff, 0, 0); //Set stroke to red ( R, G, B)
+      inByte = float(inString); 
+      
+      // Verificação de cálculo de BPM
+      if (inByte > threshold && belowThreshold == true)
+      {
+        calculateBPM();
+        belowThreshold = false;
+      }
+      else if(inByte < threshold)
+      {
+        belowThreshold = true;
+      }
+    }
+  }
+}
+  
+void calculateBPM () 
+{  
+  int beat_new = millis();    // obter o milissegundo atual
+  int diff = beat_new - beat_old;    // Encontre o tempo entre as duas últimas batidas
+  float currentBPM = 60000 / diff;    // converter para batimentos por minuto
+  beats[beatIndex] = currentBPM;  // armazenar para matriz para converter a média
+  float total = 0.0;
+  for (int i = 0; i < 500; i++){
+    total += beats[i];
+  }
+  BPM = int(total / 500);
+  beat_old = beat_new;
+  beatIndex = (beatIndex + 1) % 500;  // percorrer a matriz em vez de usar a fila FIFO
+  }
