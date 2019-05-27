@@ -2,13 +2,13 @@
 
 (a) fork?
 	
-	Vantagens: A aplicação roda vários programas filho, cada filho executa sua própria tarefa, cada filho tem seu espaço de memória protegido, a comunicação é feita por mecanismos: pipes, sinais, etc. 
-	Desvantagens: Troca de contexto (Heavyweight).
+Vantagens: A aplicação roda vários programas filho, cada filho executa sua própria tarefa, cada filho tem seu espaço de memória protegido, a comunicação é feita por mecanismos: pipes, sinais, etc. 
+Desvantagens: Troca de contexto (Heavyweight).
 
 (b) threads?
 
-	Vantagens: Uma só aplicação pode rodar várias threads, todas as threads compartilham o mesmo espaço de memória, a comunicação é mais simples por usar memória compartilhada, troca de contexto (lightweight). 
-	Desvantagens: Risco de corrupção de dados.
+Vantagens: Uma só aplicação pode rodar várias threads, todas as threads compartilham o mesmo espaço de memória, a comunicação é mais simples por usar memória compartilhada, troca de contexto (lightweight). 
+Desvantagens: Risco de corrupção de dados.
 
 
 2. Quantas threads serão criadas após as linhas de código a seguir? Quantas coexistirão? Por quê?
@@ -55,14 +55,14 @@ int main (int argc, char** argv)
 
 (a) `pthread_setcancelstate()`
 
-	Seta o estado de cancelamento da. thread para o valor dado no estado. O argumento de estado deve ter um dos seguintes valores: 
-	- PTHREAD_CANCEL_ENABLE: a thread é cancelável. Esse é o padrão de cancelamento de estado em todas as novas threads, incluindo a thread inicial. 
-	- PTHREAD_CANCEL_DISABLE: A thread não é cancelável. Se um pedido de cancelamento é recebido, é cancelado até o cancelamento for ativado.
+Seta o estado de cancelamento da. thread para o valor dado no estado. O argumento de estado deve ter um dos seguintes valores: 
+- PTHREAD_CANCEL_ENABLE: a thread é cancelável. Esse é o padrão de cancelamento de estado em todas as novas threads, incluindo a thread inicial. 
+- PTHREAD_CANCEL_DISABLE: A thread não é cancelável. Se um pedido de cancelamento é recebido, é cancelado até o cancelamento for ativado.
 
 (b) `pthread_setcanceltype()`
 
-	Seta o tipo de cancelamento da thread para um valor dado no tipo. O tipo de cancelamento anterior é retornado pelo buffer apontado por "oldtype". O argumento type deve ter um dos seguintes valores: 
-	- PTHREAD_CANCEL_DEFERRED: Um pedido de cancelamento é diferido até a thread chamar uma função que é um ponteiro de cancelamento. 
-	- PTHREAD_CANCEL_ASYNCHRONOUS: A thread pode ser cancelada a qualquer momento.
+Seta o tipo de cancelamento da thread para um valor dado no tipo. O tipo de cancelamento anterior é retornado pelo buffer apontado por "oldtype". O argumento type deve ter um dos seguintes valores: 
+- PTHREAD_CANCEL_DEFERRED: Um pedido de cancelamento é diferido até a thread chamar uma função que é um ponteiro de cancelamento. 
+- PTHREAD_CANCEL_ASYNCHRONOUS: A thread pode ser cancelada a qualquer momento.
 
 (DICA: elas são relacionadas à função pthread_cancel().)
