@@ -2,35 +2,25 @@
 
 (a) Quais são as características básicas deste modelo?
 
-Basicamente, para qualquerpar de aplicações que se comunicam, um dos lados deve iniciar a execução e esperar (indefinidamente) até ser contactado pelo outro lado.
+É um modelo de comunicação com sockets que possui sempre comunicação de duas vias. Fullduplex, recebendo e mandando ao mesmo tempo.
 
 (b) Quais são as características básicas do servidor?
 
-Um servidor é um programa que espera por requisições de um cliente. Ou seja, ele:
-	- Aguarda passivamente
-	- Responde aos clientes
-	- Socket passivo
+Aguarda e responde aos clientes. De forma passiva.
 
 (c) Quais são as características básicas do cliente?
 
-Um cliente é uma aplicaça~que inicia uma comunicação par-a-par. Ou seja, ele:
-	- Inicia a comunicação
-	- Deve saber o endereço e a porta do servidor
-	- Socket ativo
-
+Como o cliente inicia a comunicação, é necessário saber o código do servidor, o IP, conhecer o IP é uma característica básica.
 
 2.  Com relação ao protocolo de comunicação da internet, responda:
 
 (a) O que são protocolos de comunicação?
 
-Um protocolo é um método que possibilita a comunicação entre processos (eventualmente executados em diferentes máquinas), ou seja, um conjunto de regras e procedimentos a serem respeitados para emitir e receber dados numa rede. Existem vários deles, utilizados dependendo do que se espera da comunicação. Certos protocolos, por exemplo, são especializados na troca de arquivos (FTP), outros servem apenas para gerir o estado da transmissão e seus erros (ICMP).
-
+São regras que controlam a comunicação e garante sua eficiência. No seu serviço correto, detecta e evita a perda de dados ao longo da transmissão de um sinal.
 
 (b) Quais são as características básicas de protocolos de comunicação?
-	- Cria um socket
-	- Associaçao de	um socket de um	servidor um endereço.
-	- Recebe dados (sem conexão estabelecida)
-	- Envia dados (sem conexão estabelecida)
+
+Definem como iniciar e finalizar uma mensagem, formatar, detectar uma perda, o término de uma sessão ou de conexão.
 	
 
 3. Com relação ao protocolo TCP, responda:
